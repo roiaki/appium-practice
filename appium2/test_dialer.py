@@ -33,9 +33,11 @@ last_name_field.send_keys('山田')
 first_name_field = wait.until(EC.presence_of_element_located((AppiumBy.XPATH, "//android.widget.EditText[@text='名']")))
 first_name_field.send_keys('太郎')
 
+element = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("電話番号"))')
 
+tel_field = wait.until(EC.presence_of_element_located((AppiumBy.XPATH, "//android.widget.EditText[@text='電話番号']")))
+tel_field.send_keys('123456789')
 
-# time.sleep(10)
-
-# driver.quit()
+time.sleep(10)
+driver.quit()
 
